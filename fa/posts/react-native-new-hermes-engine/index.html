@@ -1,0 +1,175 @@
+<!doctype html>
+
+<html lang="fa-ir" dir="rtl">
+
+  <head>
+    <title>سجاد هاشمیان</title>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="فیسبوک در Chain React 2019، موتور متن‌باز جاوا اسکریپت Hermes رو معرفی کرد که برای React Native بهینه شده تا حجم و زمان …" />
+<meta name="author" content="سجاد هاشمیان" />
+<meta property="og:title" content="معرفی موتور Hermes برای React Native" />
+<meta property="og:description" content="فیسبوک در Chain React 2019، موتور متن‌باز جاوا اسکریپت Hermes رو معرفی کرد که برای React Native بهینه شده تا حجم و زمان راه‌اندازی App رو کاهش بده و حافظه‌اصلی کمتری هنگام استفاده از App اشغال بشه که البته یک مزیت خیلی عالی برای گوشی‌های رده پایین که محدودیت حافظه‌اصلی دارن محسوب میشه.
+  مقایسه نتایج Hermes   React Native به صورت پیشفرض از JavaScriptCore استفاده میکنه که برای Android یکسری مشکلات ایجاد کرده." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hashemian.me/fa/posts/react-native-new-hermes-engine/" /><meta property="article:published_time" content="2019-07-19T11:00:15&#43;03:30"/>
+<meta property="article:modified_time" content="2019-07-19T11:00:15&#43;03:30"/><meta property="og:site_name" content="سجاد هاشمیان" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="معرفی موتور Hermes برای React Native"/>
+<meta name="twitter:description" content="فیسبوک در Chain React 2019، موتور متن‌باز جاوا اسکریپت Hermes رو معرفی کرد که برای React Native بهینه شده تا حجم و زمان راه‌اندازی App رو کاهش بده و حافظه‌اصلی کمتری هنگام استفاده از App اشغال بشه که البته یک مزیت خیلی عالی برای گوشی‌های رده پایین که محدودیت حافظه‌اصلی دارن محسوب میشه.
+  مقایسه نتایج Hermes   React Native به صورت پیشفرض از JavaScriptCore استفاده میکنه که برای Android یکسری مشکلات ایجاد کرده."/>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+<link rel="stylesheet" href="https://hashemian.me/css/style.css" />
+</head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="/fa/">سجاد هاشمیان</a>
+        </h1>
+        <ul id="social-media">
+          
+          
+          <li><a href="/en">en</a></li>
+          
+          
+          
+          <li><a href="https://github.com/sijad"><img src="/img/github.png"></i></a></li>
+          
+        </ul>
+        
+        <p><em>کد مود اینا&hellip;</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="/fa/about/">
+                <span>درباره</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>معرفی موتور Hermes برای React Native</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2019-07-19T11:00:15&#43;03:30">Jul 19, 2019</time>
+        </li>
+        
+
+        
+
+        <li>3 دقیقه مطالعه</li>
+    </ul>
+</aside>
+
+    
+
+    <p>فیسبوک در Chain React 2019، موتور متن‌باز جاوا اسکریپت <a href="https://hermesengine.dev/">Hermes</a> رو معرفی کرد که برای React Native بهینه شده تا حجم و زمان راه‌اندازی App رو کاهش بده و حافظه‌اصلی کمتری هنگام استفاده از App اشغال بشه که البته یک مزیت خیلی عالی برای گوشی‌های رده پایین که محدودیت حافظه‌اصلی دارن محسوب میشه.</p>
+
+<figure>
+    <img src="./hermesstats-1.jpg"
+         alt="Hermes Status Compare"/> <figcaption>
+            <h4>مقایسه نتایج Hermes</h4>
+        </figcaption>
+</figure>
+
+
+<p>React Native به صورت پیشفرض از <a href="https://developer.apple.com/documentation/javascriptcore">JavaScriptCore</a> استفاده میکنه که برای Android یکسری مشکلات ایجاد کرده. برای مثال به دلیل <a href="https://github.com/facebook/android-jsc">تغییرات زیاد</a> داخل jscore (که بشه توی Android اجراش کرد) و کمبود منابع، چندین سال از <a href="https://github.com/facebook/react-native/issues/19737">آخرین بروزرسانی</a> اون میگذشت که البته بعد از بروزرسانی jscore مشکلات دیگه‌ای اضافه شد، مثلا حجم App تقریبا <a href="https://github.com/facebook/react-native/issues/23575">دو برابر</a> شدش و یا اینکه موقع Debug کردن موتور <a href="https://v8.dev/">v8 مرورگر کروم</a>، <a href="https://facebook.github.io/react-native/docs/javascript-environment#javascript-runtime">جایگزین jscore میشه</a>.</p>
+
+<p>یکی از کارهای مهمی که Hermes انجام میده اینه که موقع خروجی گرفتن از App کدهای جاوااسکریپت رو به Bytecode تبدیل میکنه. یعنی اینکه عمل Parse و Compile کد رو جلو جلو انجام میده که تاثییر زیادی در زمان راه‌اندازی App داره.</p>
+
+<figure>
+    <img src="./HermesOSSChainReact_blog_FIN_1-1.gif"
+         alt="What Hermes does"/> <figcaption>
+            <h4>کاری که Hermes انجام میده</h4>
+        </figcaption>
+</figure>
+
+
+<p>البته این کار یکسری محدودیت هم ایجاد میکنه مثلا دیگه نمیشه از متد <code>()toString</code> برای تبدیل توابع به کدشون استفاده کرد که البته داخل محیط React Native کاربردی نداره. (میتونید ویژگی‌ها و محدودیت‌های دیگه Hermes رو از <a href="https://github.com/facebook/hermes/blob/master/doc/Features.md">اینجا</a> دنبال کنید). علاوه بر این Hermes بهینه‌سازی‌هایی دیگه‌ای هم اعمال میکنه، مثلا Stringها رو بصورتی در حافظه‌اصلی <a href="https://youtu.be/zEjqDWqeDdg?t=467">بارگذاری میکنه</a> که فراخونیشون سریعتر باشه.</p>
+
+<p>برای فعال کردن Hermes، حداقل React Native نسخه 0.60.2 نیاز هست و اگه دوست دارین که Hermes رو امتحان کنید میتونید <a href="https://facebook.github.io/react-native/docs/hermes/">این دستورالعمل</a> رو دنبال کنید. همچنین میتونید فیلم معرفی Hermes رو <a href="https://youtu.be/zEjqDWqeDdg">اینجا ببینید</a>.</p>
+
+<p>راستی از اونجایی که این موضوع برام جالب بود، کمی جستجو کردم تا بازخورد کاربرهای دیگه هم بدونم، که با یک موتور جاوااسکریپت دیگه به نام <a href="https://bellard.org/quickjs/">QuickJS</a> آشنا شدم که آقای <a href="https://en.wikipedia.org/wiki/Fabrice_Bellard">Bellard</a> همین تازگی‌ها منتشر کرده و خیلی خوب بهینه شده. یکسری ویژگیهای QuickJS که بنظرم جالب اومدن:</p>
+
+<ul>
+<li>میتونید کد JavaScript خودتون رو بصورت Stand-alone کامپایل و منتشر کنید. (یعنی دیگه برای مثال وابستگی به node یا غیره ندارید)</li>
+<li>کد js رو به زبان c تبدیل و بصورت Embed داخل کد c ازش استفاده کنید یا برعکس. (که البته کد c تولید شده خوانایی زیادی نداره و بیشترش Bytecode هست)</li>
+<li>میتونید کدهای جاواساکریپت رو برای webassemly کامپایل کنید و داخل مرورگر اجراشون کنید.</li>
+<li>تقریبا بصورت کامل از ES2019 پشتیبانی میکنه.</li>
+<li><a href="https://bellard.org/quickjs/bench.html">کارایی خیلی خوبی</a> نسبت به رقیب‌های قدیمی خودش داره.</li>
+</ul>
+
+<p>دوستدارم بدونم Hermes و QuickJS نسبت به هم چه سرعتی دارن و اینکه آیا میشه کدهای تولید شده توسط QuickJS رو به React Native متصل کرد؟ کاریشون چقدر بهتره؟</p>
+
+<p><a href="https://code.fb.com/android/hermes/">منبع عکس‌های</a></p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://hashemian.me/fa/posts/fix-open-sites-problem-with-dns-over-tls/">« حل مشکل باز شدن بعضی از سایت‌ها در لینوکس با DNS-Over-TLS</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+
+<section class="comments">
+  
+    <h3>بدون نظر</h3>
+  
+  <form action="https://serverlessman.hashemian.me/submit" method="POST">
+    <input type="hidden" name="property" value="comments">
+    <input type="hidden" name="parent" value="react-native-new-hermes-engine">
+    <input type="hidden" name="lang" value="fa">
+    <input type="hidden" name="g-recaptcha-response" value="TODO">
+    <input type="text" name="name" placeholder="نام شما...">
+    <textarea name="body" placeholder="چیزی بنویسید..."></textarea>
+    <input type="submit" value="ارسال">
+  </form>
+</section>
+
+
+
+
+
+
+</main>
+    <footer>
+      <h6>
+        © 2019 <a href="/">سجاد هاشمیان</a> |
+        <a href="https://github.com/sijad/hashemian.me">source</a>
+      </h6>
+    </footer>
+</div>
+<script src="https://hashemian.me/js/bundle.min.js"></script>
+</body>
+
+</html>

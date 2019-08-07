@@ -1,0 +1,180 @@
+<!doctype html>
+
+<html lang="fa-ir" dir="rtl">
+
+  <head>
+    <title>سجاد هاشمیان</title>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="چند وقتی هست که به لینوکس کوچ کردم و از همون اول متوجه شدم که بعضی از سایت‌ها مثلا گیت‌هاب با مشکل باز میشن و مجبور بودم …" />
+<meta name="author" content="سجاد هاشمیان" />
+<meta property="og:title" content="حل مشکل باز شدن بعضی از سایت‌ها در لینوکس با DNS-Over-TLS" />
+<meta property="og:description" content="چند وقتی هست که به لینوکس کوچ کردم و از همون اول متوجه شدم که بعضی از سایت‌ها مثلا گیت‌هاب با مشکل باز میشن و مجبور بودم که از ف*شکن استفاده کنم تا بتونم بهشون دسترسی پیدا کنم و از همون اول اطمینان داشتم که مشکل از DNS هست چون سایتایی که میخواستم بهشون درسترسی پیدا کنم ف*تر نبودن و بیشتر سایت‌ها درست باز میشدن. همچنین بعد از اینکه یه بار وصل میشدم و ف*شکن رو خاموش میکردم مشکل برطرف میشد." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hashemian.me/fa/posts/fix-open-sites-problem-with-dns-over-tls/" /><meta property="article:published_time" content="2019-03-29T10:23:11&#43;03:30"/>
+<meta property="article:modified_time" content="2019-03-29T10:23:11&#43;03:30"/><meta property="og:site_name" content="سجاد هاشمیان" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="حل مشکل باز شدن بعضی از سایت‌ها در لینوکس با DNS-Over-TLS"/>
+<meta name="twitter:description" content="چند وقتی هست که به لینوکس کوچ کردم و از همون اول متوجه شدم که بعضی از سایت‌ها مثلا گیت‌هاب با مشکل باز میشن و مجبور بودم که از ف*شکن استفاده کنم تا بتونم بهشون دسترسی پیدا کنم و از همون اول اطمینان داشتم که مشکل از DNS هست چون سایتایی که میخواستم بهشون درسترسی پیدا کنم ف*تر نبودن و بیشتر سایت‌ها درست باز میشدن. همچنین بعد از اینکه یه بار وصل میشدم و ف*شکن رو خاموش میکردم مشکل برطرف میشد."/>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+<link rel="stylesheet" href="https://hashemian.me/css/style.css" />
+</head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="/fa/">سجاد هاشمیان</a>
+        </h1>
+        <ul id="social-media">
+          
+          
+          <li><a href="/en">en</a></li>
+          
+          
+          
+          <li><a href="https://github.com/sijad"><img src="/img/github.png"></i></a></li>
+          
+        </ul>
+        
+        <p><em>کد مود اینا&hellip;</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="/fa/about/">
+                <span>درباره</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>حل مشکل باز شدن بعضی از سایت‌ها در لینوکس با DNS-Over-TLS</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2019-03-29T10:23:11&#43;03:30">Mar 29, 2019</time>
+        </li>
+        
+        <li>
+            دسته‌بندی‌ها:
+            <em>
+                
+                    
+                    <a href="/fa/categories/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3">لینوکس</a>
+                
+            </em>
+        </li>
+        
+
+        
+
+        <li>2 دقیقه مطالعه</li>
+    </ul>
+</aside>
+
+    
+
+    <p>چند وقتی هست که به لینوکس کوچ کردم و از همون اول متوجه شدم که بعضی از سایت‌ها مثلا گیت‌هاب با مشکل باز میشن و مجبور بودم که از ف*شکن استفاده کنم تا بتونم بهشون دسترسی پیدا کنم و از همون اول اطمینان داشتم که مشکل از DNS هست چون سایتایی که میخواستم بهشون درسترسی پیدا کنم ف*تر نبودن و بیشتر سایت‌ها درست باز میشدن. همچنین بعد از اینکه یه بار وصل میشدم و ف*شکن رو خاموش میکردم مشکل برطرف میشد.</p>
+
+<p>چند وقت پیش‌ها که کلودفلر سرویس <a href="https://1.1.1.1/">1.1.1.1</a> رو معرفی کرد با یه موضوع جدیدی به نام DNS-Over-HTTPS یا DNS-Over-TLS آشنایی پیدا کردم. همون موقع با کمی جستجو متوجه شدم هنوز به صورت گسترده قابل استفاده نیست و برای استفاده ازش باید یه سرویس روی کامپیوتر خودتون نصب کنید تا درخواست‌های DNS رو تبدیل کنه و روی بستر امن انتقال بده.</p>
+
+<p>حدس میزدم که با استفاده از DNS زوی بستر امن بشه این مشکل رو حل کرد که حدسم هم درست بود.
+با جستجو <a href="https://www.linuxbabe.com/ubuntu/ubuntu-stubby-dns-over-tls">این مقاله</a> رو پیدا کردم که چجوری نصب و راه‌اندازی <code>stubby</code> رو خیلی کامل توضیح داده. وقتی <code>stubby</code> رو نصب کردید، باید DNS سیستم‌عاملتون رو به <code>127.0.0.1</code> تغییر بدید.</p>
+
+<p>بعد از این برنامه‌ها (مثلا مرورگر) درخواست‌های DNS رو به <code>stubby</code> میفرستن و <code>stubby</code> درخواست‌ها رو روی بستر امن انتقال میده و برمیگردونه.</p>
+
+<p>توی پیکربندی <code>stubby</code> تعریف کردم که بجای سرورهای پیشفرض از سرویس کلودفلر استفاده کنه که این محتویات پیکربندی <code>stubby</code> منه:</p>
+
+<pre><code>resolution_type: GETDNS_RESOLUTION_STUB
+dns_transport_list:
+  - GETDNS_TRANSPORT_TLS
+tls_authentication: GETDNS_AUTHENTICATION_REQUIRED
+tls_query_padding_blocksize: 128
+edns_client_subnet_private : 1
+round_robin_upstreams: 1
+idle_timeout: 10000
+listen_addresses:
+  - 127.0.0.1
+  - 0::1
+upstream_recursive_servers:
+ - address_data: 1.1.1.1
+   tls_auth_name: &quot;cloudflare-dns.com&quot;
+ - address_data: 1.0.0.1
+   tls_auth_name: &quot;cloudflare-dns.com&quot;
+</code></pre>
+
+<p>بعدش هم کش DNS مرورگرم رو خالی کردم (برای کروم وارد آدرس <code>chrome://net-internals/#dns</code> بشین و روی دکمه <code>Clear host cache</code> کلیک کنید)</p>
+
+<p>امیدوارم که اگه شما هم با همچین مشکلی مواجه هستید با استفاده از DNS-Over-TLS بتونید حلش کنید.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://hashemian.me/fa/posts/check-app-version-is-up-to-date/">« بررسی وجود نسخه جدید Application</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://hashemian.me/fa/posts/react-native-new-hermes-engine/">معرفی موتور Hermes برای React Native »</a>
+        </li>
+        
+    </ul>
+</section>
+    
+
+<section class="comments">
+  
+    <h3>بدون نظر</h3>
+  
+  <form action="https://serverlessman.hashemian.me/submit" method="POST">
+    <input type="hidden" name="property" value="comments">
+    <input type="hidden" name="parent" value="fix-open-sites-problem-with-dns-over-tls">
+    <input type="hidden" name="lang" value="fa">
+    <input type="hidden" name="g-recaptcha-response" value="TODO">
+    <input type="text" name="name" placeholder="نام شما...">
+    <textarea name="body" placeholder="چیزی بنویسید..."></textarea>
+    <input type="submit" value="ارسال">
+  </form>
+</section>
+
+
+
+
+
+
+</main>
+    <footer>
+      <h6>
+        © 2019 <a href="/">سجاد هاشمیان</a> |
+        <a href="https://github.com/sijad/hashemian.me">source</a>
+      </h6>
+    </footer>
+</div>
+<script src="https://hashemian.me/js/bundle.min.js"></script>
+</body>
+
+</html>

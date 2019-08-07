@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sajjad Hashemian</title>
+    <link>https://hashemian.me/</link>
+    <description>Recent content on Sajjad Hashemian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Dec 2018 13:04:14 +0330</lastBuildDate>
+    
+	<atom:link href="https://hashemian.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://hashemian.me/about/</link>
+      <pubDate>Sun, 02 Dec 2018 13:04:14 +0330</pubDate>
+      
+      <guid>https://hashemian.me/about/</guid>
+      <description>Hi 👋 my name is Sajjad! co-founder of karjoo.plus, open-source enthusiasm, full-stack Programmer, Security researcher.
+My Areas of interest  👨‍💻 Programming 👨‍🔬 Research and Development 👨‍🔧 Server Administration 👀 IT Security  My Experiences  JavaScript &amp;amp; TypeScript thousands of hours React &amp;amp; React Native thousands of hours PHP &amp;amp; MySQL thousands of hours GraphQL hundreds of hours Golang hundreds of hours PostgreSQL &amp;amp; PL/pgSQL tens of hours Linux Server Administration thousands of hours IT Security and Penetration thousands of hours Docker tens of hours  Please feel free to ping me at hi@hashemian.</description>
+    </item>
+    
+  </channel>
+</rss>

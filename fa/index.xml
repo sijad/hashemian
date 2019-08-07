@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>سجاد هاشمیان</title>
+    <link>https://hashemian.me/fa/</link>
+    <description>Recent content on سجاد هاشمیان</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fa-ir</language>
+    <lastBuildDate>Fri, 19 Jul 2019 11:00:15 +0330</lastBuildDate>
+    
+	<atom:link href="https://hashemian.me/fa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>معرفی موتور Hermes برای React Native</title>
+      <link>https://hashemian.me/fa/posts/react-native-new-hermes-engine/</link>
+      <pubDate>Fri, 19 Jul 2019 11:00:15 +0330</pubDate>
+      
+      <guid>https://hashemian.me/fa/posts/react-native-new-hermes-engine/</guid>
+      <description>فیسبوک در Chain React 2019، موتور متن‌باز جاوا اسکریپت Hermes رو معرفی کرد که برای React Native بهینه شده تا حجم و زمان راه‌اندازی App رو کاهش بده و حافظه‌اصلی کمتری هنگام استفاده از App اشغال بشه که البته یک مزیت خیلی عالی برای گوشی‌های رده پایین که محدودیت حافظه‌اصلی دارن محسوب میشه.
+  مقایسه نتایج Hermes   React Native به صورت پیشفرض از JavaScriptCore استفاده میکنه که برای Android یکسری مشکلات ایجاد کرده.</description>
+    </item>
+    
+    <item>
+      <title>حل مشکل باز شدن بعضی از سایت‌ها در لینوکس با DNS-Over-TLS</title>
+      <link>https://hashemian.me/fa/posts/fix-open-sites-problem-with-dns-over-tls/</link>
+      <pubDate>Fri, 29 Mar 2019 10:23:11 +0330</pubDate>
+      
+      <guid>https://hashemian.me/fa/posts/fix-open-sites-problem-with-dns-over-tls/</guid>
+      <description>چند وقتی هست که به لینوکس کوچ کردم و از همون اول متوجه شدم که بعضی از سایت‌ها مثلا گیت‌هاب با مشکل باز میشن و مجبور بودم که از ف*شکن استفاده کنم تا بتونم بهشون دسترسی پیدا کنم و از همون اول اطمینان داشتم که مشکل از DNS هست چون سایتایی که میخواستم بهشون درسترسی پیدا کنم ف*تر نبودن و بیشتر سایت‌ها درست باز میشدن. همچنین بعد از اینکه یه بار وصل میشدم و ف*شکن رو خاموش میکردم مشکل برطرف میشد.</description>
+    </item>
+    
+    <item>
+      <title>بررسی وجود نسخه جدید Application</title>
+      <link>https://hashemian.me/fa/posts/check-app-version-is-up-to-date/</link>
+      <pubDate>Sat, 08 Dec 2018 16:59:11 +0330</pubDate>
+      
+      <guid>https://hashemian.me/fa/posts/check-app-version-is-up-to-date/</guid>
+      <description>چند وقت پیشا یک package برای React Native طراحی کردیم که اجازه استفاده از ویژگی امتیاز دادن کافه بازار رو با js فراهم میکنه، بعدش یه نفری بهمون پیشنهاد کرد که یکی دیگه از قابلیت های بازار رو هم برای React Native پیاده سازی کنیم، که این اجازه رو می ده که بررسی کنیم آیا برنامه ای که روی دستگاه نصب هست بروز هستش یا خیر.
+بعدازاینکه مستندات کافه بازار یه نگاهی انداختم واقعاً جا خوردم که چرا این قدر پیچیده طراحی شده، توی این نوشته قصد دارم چند راه ساده تر رو پیشنهاد کنم که بتونید بررسی کنید آیا آخرین نسخه Application یا بازیتون روی دستگاه کاربر نصب شده یا خیر.</description>
+    </item>
+    
+    <item>
+      <title>درباره</title>
+      <link>https://hashemian.me/fa/about/</link>
+      <pubDate>Sun, 02 Dec 2018 13:04:14 +0330</pubDate>
+      
+      <guid>https://hashemian.me/fa/about/</guid>
+      <description>سلام، من سجادم، هم بنیانگذار karjoo.plus.
+این وبلاگ شخصی منه و تصمیم دارم داخلش درمورد برنامه‌نویسی صحبت کنم&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>سلام دنیا</title>
+      <link>https://hashemian.me/fa/posts/hello-world/</link>
+      <pubDate>Sun, 02 Dec 2018 11:06:15 +0330</pubDate>
+      
+      <guid>https://hashemian.me/fa/posts/hello-world/</guid>
+      <description>سلام&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

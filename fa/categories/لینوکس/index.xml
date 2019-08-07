@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>لینوکس on سجاد هاشمیان</title>
+    <link>https://hashemian.me/fa/categories/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/</link>
+    <description>Recent content in لینوکس on سجاد هاشمیان</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fa-ir</language>
+    <lastBuildDate>Fri, 29 Mar 2019 10:23:11 +0330</lastBuildDate>
+    
+	<atom:link href="https://hashemian.me/fa/categories/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>حل مشکل باز شدن بعضی از سایت‌ها در لینوکس با DNS-Over-TLS</title>
+      <link>https://hashemian.me/fa/posts/fix-open-sites-problem-with-dns-over-tls/</link>
+      <pubDate>Fri, 29 Mar 2019 10:23:11 +0330</pubDate>
+      
+      <guid>https://hashemian.me/fa/posts/fix-open-sites-problem-with-dns-over-tls/</guid>
+      <description>چند وقتی هست که به لینوکس کوچ کردم و از همون اول متوجه شدم که بعضی از سایت‌ها مثلا گیت‌هاب با مشکل باز میشن و مجبور بودم که از ف*شکن استفاده کنم تا بتونم بهشون دسترسی پیدا کنم و از همون اول اطمینان داشتم که مشکل از DNS هست چون سایتایی که میخواستم بهشون درسترسی پیدا کنم ف*تر نبودن و بیشتر سایت‌ها درست باز میشدن. همچنین بعد از اینکه یه بار وصل میشدم و ف*شکن رو خاموش میکردم مشکل برطرف میشد.</description>
+    </item>
+    
+  </channel>
+</rss>

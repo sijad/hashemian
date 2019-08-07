@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://hashemian.me/about/</loc>
+    <lastmod>2018-12-02T13:04:14+03:30</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fa"
+                href="https://hashemian.me/fa/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hashemian.me/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hashemian.me/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fa"
+                href="https://hashemian.me/fa/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hashemian.me/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hashemian.me/</loc>
+    <lastmod>2018-12-02T13:04:14+03:30</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fa"
+                href="https://hashemian.me/fa/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hashemian.me/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hashemian.me/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fa"
+                href="https://hashemian.me/fa/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hashemian.me/tags/"
+                />
+  </url>
+  
+</urlset>

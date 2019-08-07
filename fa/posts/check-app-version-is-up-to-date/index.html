@@ -1,0 +1,240 @@
+<!doctype html>
+
+<html lang="fa-ir" dir="rtl">
+
+  <head>
+    <title>سجاد هاشمیان</title>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="چند وقت پیشا یک package برای React Native طراحی کردیم که اجازه استفاده از ویژگی امتیاز دادن کافه بازار رو با js فراهم …" />
+<meta name="author" content="سجاد هاشمیان" />
+<meta property="og:title" content="بررسی وجود نسخه جدید Application" />
+<meta property="og:description" content="چند وقت پیشا یک package برای React Native طراحی کردیم که اجازه استفاده از ویژگی امتیاز دادن کافه بازار رو با js فراهم میکنه، بعدش یه نفری بهمون پیشنهاد کرد که یکی دیگه از قابلیت های بازار رو هم برای React Native پیاده سازی کنیم، که این اجازه رو می ده که بررسی کنیم آیا برنامه ای که روی دستگاه نصب هست بروز هستش یا خیر.
+بعدازاینکه مستندات کافه بازار یه نگاهی انداختم واقعاً جا خوردم که چرا این قدر پیچیده طراحی شده، توی این نوشته قصد دارم چند راه ساده تر رو پیشنهاد کنم که بتونید بررسی کنید آیا آخرین نسخه Application یا بازیتون روی دستگاه کاربر نصب شده یا خیر." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hashemian.me/fa/posts/check-app-version-is-up-to-date/" /><meta property="article:published_time" content="2018-12-08T16:59:11&#43;03:30"/>
+<meta property="article:modified_time" content="2018-12-08T16:59:11&#43;03:30"/><meta property="og:site_name" content="سجاد هاشمیان" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="بررسی وجود نسخه جدید Application"/>
+<meta name="twitter:description" content="چند وقت پیشا یک package برای React Native طراحی کردیم که اجازه استفاده از ویژگی امتیاز دادن کافه بازار رو با js فراهم میکنه، بعدش یه نفری بهمون پیشنهاد کرد که یکی دیگه از قابلیت های بازار رو هم برای React Native پیاده سازی کنیم، که این اجازه رو می ده که بررسی کنیم آیا برنامه ای که روی دستگاه نصب هست بروز هستش یا خیر.
+بعدازاینکه مستندات کافه بازار یه نگاهی انداختم واقعاً جا خوردم که چرا این قدر پیچیده طراحی شده، توی این نوشته قصد دارم چند راه ساده تر رو پیشنهاد کنم که بتونید بررسی کنید آیا آخرین نسخه Application یا بازیتون روی دستگاه کاربر نصب شده یا خیر."/>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+<link rel="stylesheet" href="https://hashemian.me/css/style.css" />
+</head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="/fa/">سجاد هاشمیان</a>
+        </h1>
+        <ul id="social-media">
+          
+          
+          <li><a href="/en">en</a></li>
+          
+          
+          
+          <li><a href="https://github.com/sijad"><img src="/img/github.png"></i></a></li>
+          
+        </ul>
+        
+        <p><em>کد مود اینا&hellip;</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="/fa/about/">
+                <span>درباره</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>بررسی وجود نسخه جدید Application</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-12-08T16:59:11&#43;03:30">Dec 8, 2018</time>
+        </li>
+        
+        <li>
+            دسته‌بندی‌ها:
+            <em>
+                
+                    
+                    <a href="/fa/categories/%D8%AA%D9%88%D8%B3%D8%B9%D9%87">توسعه</a>
+                
+            </em>
+        </li>
+        
+
+        
+
+        <li>3 دقیقه مطالعه</li>
+    </ul>
+</aside>
+
+    
+
+    
+
+<p>چند وقت پیشا یک <a href="https://github.com/karjooplus/react-native-cafebazaar-intents">package</a> برای React Native طراحی کردیم که اجازه استفاده از ویژگی امتیاز دادن کافه بازار رو با js فراهم میکنه، بعدش یه نفری بهمون پیشنهاد کرد که <a href="http://developers.cafebazaar.ir/en/docs/bazaar-services-update-check/">یکی</a> دیگه از قابلیت های بازار رو هم برای React Native پیاده سازی کنیم، که این اجازه رو می ده که بررسی کنیم آیا برنامه ای که روی دستگاه نصب هست بروز هستش یا خیر.</p>
+
+<p>بعدازاینکه مستندات کافه بازار یه نگاهی انداختم واقعاً جا خوردم که چرا این قدر پیچیده طراحی شده، توی این نوشته قصد دارم چند راه ساده تر رو پیشنهاد کنم که بتونید بررسی کنید آیا آخرین نسخه Application یا بازیتون روی دستگاه کاربر نصب شده یا خیر. <strong>مثال های مقاله با js زده شدند ولی تمامی راه حل ها به صورت Native هم قابل پیاده سازی هستند.</strong></p>
+
+<h2 id="خواندن-نسخه-از-صفحه-کافه-بازار">خواندن نسخه از صفحه کافه بازار</h2>
+
+<p>این راه حل رو فقط به عنوان مثال می زنم، و خودم به <strong>هیچ وجه توصیه اش نمی کنم</strong> چون ممکنه طراحی صفحه تغییر کنه و برنامتون به مشکل بر بخوره، همچنین این روش حجم تقریباً زیادی دانلود و پردازش میکنه.</p>
+
+<p>میتونید صفحه کافه بازار برنامتون رو دانلود کنید و بعدش آخرین نسخه برنامتون رو ازش استخراج کنید:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-js" data-lang="js"><span style="color: #a6e22e">fetch</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;https://cafebazaar.ir/app/com.hitalent.hitalent/?l=en&#39;</span><span style="color: #f8f8f2">)</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">res</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">res</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">text</span><span style="color: #f8f8f2">())</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">res</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">res</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">replace</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">/[\n\s]+/g</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;&#39;</span><span style="color: #f8f8f2">))</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">res</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">res</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">match</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">/&lt;span&gt;Version&lt;\/span&gt;&lt;spanclass=&quot;pull-right&quot;&gt;(.+?)&lt;\/span&gt;/</span><span style="color: #f8f8f2">))</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">ver</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">console</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">log</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">ver</span><span style="color: #f8f8f2">[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]))</span>
+</code></pre></div>
+
+<h2 id="آپلود-آخرین-نسخه-در-یک-فال-متنی">آپلود آخرین نسخه در یک فال متنی</h2>
+
+<p>تقریباً مثل راه حل اول ولی خیلی تمیزتر، به این صورت که شماره آخرین نسخه برنامه داخل یه فایل متنی ذخیره میشه و درجایی آپلود میشه، برنامه این فایل متنی رو دانلود میکنه و نسخه آخر رو با شماره نسخه نصب شده مقایسه میکنه:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-js" data-lang="js"><span style="color: #a6e22e">fetch</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;http://txti.es/pkjcj&#39;</span><span style="color: #f8f8f2">)</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">res</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">res</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">text</span><span style="color: #f8f8f2">())</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">res</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">res</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">match</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">/&lt;p&gt;latest_version:(.+?)&lt;\/p&gt;/</span><span style="color: #f8f8f2">))</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">m</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">m</span><span style="color: #f8f8f2">[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">])</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">ver</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">console</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">log</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">ver</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">/* e.g. if (ver &gt; currentVersion) { alert(&#39;you need upgrade!&#39;) } */</span><span style="color: #f8f8f2">)</span>
+</code></pre></div>
+
+<p>میتونید فایل رو روی هاست خودتون آپلود کنید یا اینکه داخل سرویس هایی که بهتون اجازه ساخت فایل متنی میدن بارگذاری کنید:</p>
+
+<ul>
+<li><a href="https://gist.github.com">https://gist.github.com</a></li>
+<li><a href="http://txti.es">http://txti.es</a></li>
+<li><a href="https://pastebin.com">https://pastebin.com</a></li>
+<li><a href="https://gitlab.com/dashboard/snippets">https://gitlab.com/dashboard/snippets</a></li>
+</ul>
+
+<h2 id="دریافت-آخرین-نسخه-از-api-خودتون">دریافت آخرین نسخه از API خودتون</h2>
+
+<p>این راه حل قدرت بیشتری بهتون میده ولی نیاز به این هست که شما یک سرور داشته باشید، نحوه پیاده سازیش تقریباً مثل روش قبل هست ولی به جای فایل متنی، اطلاعات از یک API دریافت میشن:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-js" data-lang="js"><span style="color: #a6e22e">fetch</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;https://api.mydomain.com/current_version&#39;</span><span style="color: #f8f8f2">)</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">res</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">res</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">json</span><span style="color: #f8f8f2">())</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">ver</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">console</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">log</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">ver</span><span style="color: #f8f8f2">))</span>
+</code></pre></div>
+
+<p>حتی میتونید نسخه فعلی رو به API ارسال کنید و پردازش مقایسه نسخه رو هم به روی سرور ببرید که به شما قدرت بیشتری در آینده میده.</p>
+
+<h2 id="استفاده-از-remote-config-firebase">استفاده از Remote Config Firebase</h2>
+
+<p>در Remote Config میتونید یه پارامتر جدید (مثلاً <code>needUpgrade</code>) اضافه کنید و با شروطی که تعریف می کنید، مقادیرش رو تغییر بدید، مثلاً اگه آخرین نسخه برنامتون 6 هست میتونید شروط رو به این شکل تعریف کنید:</p>
+
+<figure>
+    <img src="./firebase-remote-config.jpeg"
+         alt="Firebase Remote Config Example"/> <figcaption>
+            <h4>مثال Firebase Remote Config</h4>
+        </figcaption>
+</figure>
+
+
+<p>در مثال بالا یک پارامتر به اسم <code>needUpgrade</code> تعریف شده که دو مقدار <code>yes</code> و <code>no</code> داره، مقدار این پرامتر وقتی <code>yes</code> میشه که شرط <em>it is not latest version</em> برقرار باشه، داخل شرط از مقدار <code>^(?!6).*</code> برای regex استفاده شده که دربرگیرنده تمامی خطوطی هست که با <code>6</code> شروع نمیشن.</p>
+
+<p>بعدش میتونید این پارامتر رو سمت برنامتون فراخوانیش کنید:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-js" data-lang="js"><span style="color: #a6e22e">firebase</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">config</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">setDefaults</span><span style="color: #f8f8f2">({</span>
+  <span style="color: #a6e22e">needUpgrade</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;no&quot;</span><span style="color: #f8f8f2">,</span>
+<span style="color: #f8f8f2">});</span>
+
+<span style="color: #a6e22e">firebase</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">config</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">fetch</span><span style="color: #f8f8f2">()</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">(()</span> <span style="color: #f92672">=&gt;</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #a6e22e">firebase</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">config</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">activateFetched</span><span style="color: #f8f8f2">();</span>
+  <span style="color: #f8f8f2">})</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">((</span><span style="color: #a6e22e">activated</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">=&gt;</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #a6e22e">firebase</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">config</span><span style="color: #f8f8f2">().</span><span style="color: #a6e22e">getValue</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;needUpgrade&#39;</span><span style="color: #f8f8f2">);</span>
+  <span style="color: #f8f8f2">})</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #a6e22e">then</span><span style="color: #f8f8f2">((</span><span style="color: #a6e22e">snapshot</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">=&gt;</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">const</span> <span style="color: #a6e22e">needUpgrade</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">snapshot</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">val</span><span style="color: #f8f8f2">();</span>
+
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">needUpgrade</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;yes&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #75715e">// upgrade needed</span>
+    <span style="color: #f8f8f2">}</span>
+  <span style="color: #f8f8f2">})</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #66d9ef">catch</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">console</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">error</span><span style="color: #f8f8f2">);</span>
+</code></pre></div>
+
+<p>برای اطاعات بیشتر میتونی <a href="https://firebase.google.com/docs/remote-config/">مستندات Remote Config Firebase</a> و <a href="https://rnfirebase.io/docs/v5.x.x/config/example">مستندات Remote Config برای React Native</a> رو مطالعه کنید.</p>
+
+<h2 id="استفاده-از-code-push">استفاده از Code Push</h2>
+
+<p>چون نمیشه این روش رو به صورت Native پیاده سازیش کرد بهش فقط یه اشاره کوچیک می کنم، با استفاده از Code Push میتونید نسخه جدید رو روی دستگاه کاربر نصب کنید، و البته <a href="https://github.com/Microsoft/react-native-code-push/blob/master/docs/api-js.md#codepushsync">CodePush.sync</a> این اجازه رو هم به شما می ده که متونید با استفاده از اون درصورتی که برنامتون نیاز به به روزرسانی داشته باشه مطلع بشید.</p>
+
+<p>برای اطلاعات بیشتر میتونید <a href="https://github.com/Microsoft/react-native-code-push">مستندات Code Push برای React Native</a> رو مطالعه کنید.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://hashemian.me/fa/posts/hello-world/">« سلام دنیا</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://hashemian.me/fa/posts/fix-open-sites-problem-with-dns-over-tls/">حل مشکل باز شدن بعضی از سایت‌ها در لینوکس با DNS-Over-TLS »</a>
+        </li>
+        
+    </ul>
+</section>
+    
+
+<section class="comments">
+  
+    <h3>بدون نظر</h3>
+  
+  <form action="https://serverlessman.hashemian.me/submit" method="POST">
+    <input type="hidden" name="property" value="comments">
+    <input type="hidden" name="parent" value="check-app-version-is-up-to-date">
+    <input type="hidden" name="lang" value="fa">
+    <input type="hidden" name="g-recaptcha-response" value="TODO">
+    <input type="text" name="name" placeholder="نام شما...">
+    <textarea name="body" placeholder="چیزی بنویسید..."></textarea>
+    <input type="submit" value="ارسال">
+  </form>
+</section>
+
+
+
+
+
+
+</main>
+    <footer>
+      <h6>
+        © 2019 <a href="/">سجاد هاشمیان</a> |
+        <a href="https://github.com/sijad/hashemian.me">source</a>
+      </h6>
+    </footer>
+</div>
+<script src="https://hashemian.me/js/bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>توسعه on سجاد هاشمیان</title>
+    <link>https://hashemian.me/fa/categories/%D8%AA%D9%88%D8%B3%D8%B9%D9%87/</link>
+    <description>Recent content in توسعه on سجاد هاشمیان</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fa-ir</language>
+    <lastBuildDate>Sat, 08 Dec 2018 16:59:11 +0330</lastBuildDate>
+    
+	<atom:link href="https://hashemian.me/fa/categories/%D8%AA%D9%88%D8%B3%D8%B9%D9%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>بررسی وجود نسخه جدید Application</title>
+      <link>https://hashemian.me/fa/posts/check-app-version-is-up-to-date/</link>
+      <pubDate>Sat, 08 Dec 2018 16:59:11 +0330</pubDate>
+      
+      <guid>https://hashemian.me/fa/posts/check-app-version-is-up-to-date/</guid>
+      <description>چند وقت پیشا یک package برای React Native طراحی کردیم که اجازه استفاده از ویژگی امتیاز دادن کافه بازار رو با js فراهم میکنه، بعدش یه نفری بهمون پیشنهاد کرد که یکی دیگه از قابلیت های بازار رو هم برای React Native پیاده سازی کنیم، که این اجازه رو می ده که بررسی کنیم آیا برنامه ای که روی دستگاه نصب هست بروز هستش یا خیر.
+بعدازاینکه مستندات کافه بازار یه نگاهی انداختم واقعاً جا خوردم که چرا این قدر پیچیده طراحی شده، توی این نوشته قصد دارم چند راه ساده تر رو پیشنهاد کنم که بتونید بررسی کنید آیا آخرین نسخه Application یا بازیتون روی دستگاه کاربر نصب شده یا خیر.</description>
+    </item>
+    
+  </channel>
+</rss>
